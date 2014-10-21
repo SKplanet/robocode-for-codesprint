@@ -5,7 +5,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<groupId>net.sf.robocode</groupId>
 	<artifactId>super-pom</artifactId>
 	<name>Robocode Super POM</name>
-	<version>${robocode.version}</version>
+	<version>1.9.66.0</version>
 	<packaging>pom</packaging>
 	<organization>
 		<name>Robocode</name>

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1f1037e3-3611-40e2-b83e-80e64e9cc520" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/ant-contrib-0.6.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/ant-launcher.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/ant.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/classworlds-1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/codesize.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/jacobe.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/junit.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/maven-2.2.1-uber.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/lib/picocontainer-2.14.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.project" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_robocode_codesize_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_picocontainer_picocontainer_2_14_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.api/robocode.api.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.battle/robocode.battle.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.content/robocode.content.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.core/robocode.core.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.distribution/robocode.distribution.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.host/robocode.host.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.installer/robocode.installer.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.repository/robocode.repository.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.roborumble/robocode.roborumble.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.samples/robocode.samples.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.sound/robocode.sound.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.tests/robocode.tests.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.tests.robots/robocode.tests.robots.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.ui.editor/robocode.ui.editor.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robocode.ui/robocode.ui.eml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\Sf\robocode\Robocode.ipr" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sf\robocode\robocode.ipr" afterPath="" />
+      <change type="DELETED" beforePath="C:\Sf\robocode\robocode.iws" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.api/.classpath" afterPath="$PROJECT_DIR$/robocode.api/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.battle/.classpath" afterPath="$PROJECT_DIR$/robocode.battle/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.content/.classpath" afterPath="$PROJECT_DIR$/robocode.content/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.core/.classpath" afterPath="$PROJECT_DIR$/robocode.core/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.distribution/.classpath" afterPath="$PROJECT_DIR$/robocode.distribution/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.host/.classpath" afterPath="$PROJECT_DIR$/robocode.host/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.installer/.classpath" afterPath="$PROJECT_DIR$/robocode.installer/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.repository/.classpath" afterPath="$PROJECT_DIR$/robocode.repository/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.roborumble/.classpath" afterPath="$PROJECT_DIR$/robocode.roborumble/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.samples/.classpath" afterPath="$PROJECT_DIR$/robocode.samples/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.sound/.classpath" afterPath="$PROJECT_DIR$/robocode.sound/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests/.classpath" afterPath="$PROJECT_DIR$/robocode.tests/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests.robots/.classpath" afterPath="$PROJECT_DIR$/robocode.tests.robots/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui/.classpath" afterPath="$PROJECT_DIR$/robocode.ui/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui.editor/.classpath" afterPath="$PROJECT_DIR$/robocode.ui.editor/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/.gitignore" afterPath="$PROJECT_DIR$/tools/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/dotnet/pom.xml" afterPath="$PROJECT_DIR$/plugins/dotnet/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.content/pom.xml" afterPath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.content/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.distribution/pom.xml" afterPath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.distribution/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.host/pom.xml" afterPath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.host/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.tests/pom.xml" afterPath="$PROJECT_DIR$/plugins/dotnet/robocode.dotnet.tests/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/robocode.testing.api/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/robocode.testing.api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/robocode.testing.content/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/robocode.testing.content/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/robocode.testing.distribution/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/robocode.testing.distribution/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/robocode.testing.installer/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/robocode.testing.installer/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/testing/robocode.testing.samples/pom.xml" afterPath="$PROJECT_DIR$/plugins/testing/robocode.testing.samples/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.api/pom.xml" afterPath="$PROJECT_DIR$/robocode.api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.battle/pom.xml" afterPath="$PROJECT_DIR$/robocode.battle/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.content/pom.xml" afterPath="$PROJECT_DIR$/robocode.content/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.core/pom.xml" afterPath="$PROJECT_DIR$/robocode.core/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.distribution/pom.xml" afterPath="$PROJECT_DIR$/robocode.distribution/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.host/pom.xml" afterPath="$PROJECT_DIR$/robocode.host/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.installer/pom.xml" afterPath="$PROJECT_DIR$/robocode.installer/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.repository/pom.xml" afterPath="$PROJECT_DIR$/robocode.repository/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.roborumble/pom.xml" afterPath="$PROJECT_DIR$/robocode.roborumble/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.samples/pom.xml" afterPath="$PROJECT_DIR$/robocode.samples/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.sound/pom.xml" afterPath="$PROJECT_DIR$/robocode.sound/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests/pom.xml" afterPath="$PROJECT_DIR$/robocode.tests/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests.robots/pom.xml" afterPath="$PROJECT_DIR$/robocode.tests.robots/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui/pom.xml" afterPath="$PROJECT_DIR$/robocode.ui/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui.editor/pom.xml" afterPath="$PROJECT_DIR$/robocode.ui.editor/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/super-pom/pom.xml" afterPath="$PROJECT_DIR$/super-pom/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.api/robocode.api.iml" afterPath="$PROJECT_DIR$/robocode.api/robocode.api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.battle/robocode.battle.iml" afterPath="$PROJECT_DIR$/robocode.battle/robocode.battle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.content/robocode.content.iml" afterPath="$PROJECT_DIR$/robocode.content/robocode.content.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.core/robocode.core.iml" afterPath="$PROJECT_DIR$/robocode.core/robocode.core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.distribution/robocode.distribution.iml" afterPath="$PROJECT_DIR$/robocode.distribution/robocode.distribution.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.host/robocode.host.iml" afterPath="$PROJECT_DIR$/robocode.host/robocode.host.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.iml" afterPath="$PROJECT_DIR$/robocode.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.installer/robocode.installer.iml" afterPath="$PROJECT_DIR$/robocode.installer/robocode.installer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.repository/robocode.repository.iml" afterPath="$PROJECT_DIR$/robocode.repository/robocode.repository.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.roborumble/robocode.roborumble.iml" afterPath="$PROJECT_DIR$/robocode.roborumble/robocode.roborumble.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.samples/robocode.samples.iml" afterPath="$PROJECT_DIR$/robocode.samples/robocode.samples.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.sound/robocode.sound.iml" afterPath="$PROJECT_DIR$/robocode.sound/robocode.sound.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests/robocode.tests.iml" afterPath="$PROJECT_DIR$/robocode.tests/robocode.tests.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.tests.robots/robocode.tests.robots.iml" afterPath="$PROJECT_DIR$/robocode.tests.robots/robocode.tests.robots.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui.editor/robocode.ui.editor.iml" afterPath="$PROJECT_DIR$/robocode.ui.editor/robocode.ui.editor.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robocode.ui/robocode.ui.iml" afterPath="$PROJECT_DIR$/robocode.ui/robocode.ui.iml" />
+    </list>
+    <ignored path="robocode.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="robocode" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="RobocodeCompilerFactory.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/robocode.ui.editor/src/main/java/net/sf/robocode/ui/editor/RobocodeCompilerFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54448396" vertical-offset="68" max-vertical-offset="3723">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/robocode.battle/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robocode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robocode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robocode" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="reference.settings.project.maven.runner" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RunManager" selected="Application.Robocode">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Robocode" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="robocode.Robocode" />
+      <option name="VM_PARAMETERS" value="-Xmx512M" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://C:/robocode" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="robocode" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Robocode" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f1037e3-3611-40e2-b83e-80e64e9cc520" name="Default" comment="" />
+      <created>1413925706758</created>
+      <updated>1413925706758</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.66558444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3411514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14552239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/robocode.ui.editor/src/main/java/net/sf/robocode/ui/editor/RobocodeCompilerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3723">
+          <caret line="19" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robocode.api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11486486" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11486486" vertical-offset="0" max-vertical-offset="629">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robocode.battle/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11486486" vertical-offset="0" max-vertical-offset="697">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robocode.ui.editor/src/main/java/net/sf/robocode/ui/editor/RobocodeCompilerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54448396" vertical-offset="68" max-vertical-offset="3723">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>robocode</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_6" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<module name="robocode.samples" scope="TEST"/>
+	<module name="robocode.core" scope="TEST"/>
+	<lib name="Maven: org.picocontainer:picocontainer:2.14.2" scope="TEST"/>
+	<module name="robocode.host" scope="TEST"/>
+	<module name="robocode.battle" scope="TEST"/>
+	<module name="robocode.repository" scope="TEST"/>
+	<lib name="Maven: net.sf.robocode:codesize:1.1" scope="TEST"/>
+	<levels>
+		<level name="Maven: junit:junit:4.11" value="project"/>
+		<level name="Maven: org.hamcrest:hamcrest-core:1.3" value="project"/>
+		<level name="Maven: org.picocontainer:picocontainer:2.14.2" value="project"/>
+		<level name="Maven: net.sf.robocode:codesize:1.1" value="project"/>
+	</levels>
+</component>

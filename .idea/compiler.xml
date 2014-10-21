@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="robocode.api" />
+        <module name="robocode.battle" />
+        <module name="robocode.content" />
+        <module name="robocode.core" />
+        <module name="robocode.distribution" />
+        <module name="robocode.host" />
+        <module name="robocode.installer" />
+        <module name="robocode.repository" />
+        <module name="robocode.roborumble" />
+        <module name="robocode.samples" />
+        <module name="robocode.sound" />
+        <module name="robocode.tests" />
+        <module name="robocode.tests.robots" />
+        <module name="robocode.ui" />
+        <module name="robocode.ui.editor" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="robocode" target="1.6" />
+      <module name="robocode.api" target="1.6" />
+      <module name="robocode.battle" target="1.6" />
+      <module name="robocode.content" target="1.6" />
+      <module name="robocode.core" target="1.6" />
+      <module name="robocode.distribution" target="1.6" />
+      <module name="robocode.host" target="1.6" />
+      <module name="robocode.installer" target="1.6" />
+      <module name="robocode.repository" target="1.6" />
+      <module name="robocode.roborumble" target="1.6" />
+      <module name="robocode.samples" target="1.6" />
+      <module name="robocode.sound" target="1.6" />
+      <module name="robocode.tests" target="1.6" />
+      <module name="robocode.tests.robots" target="1.6" />
+      <module name="robocode.ui" target="1.6" />
+      <module name="robocode.ui.editor" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
+

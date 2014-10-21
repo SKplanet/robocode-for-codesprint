@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.api" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.battle" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.content" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.core" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.distribution" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.host" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.installer" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.repository" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.roborumble" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.samples" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.sound" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.tests" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.tests.robots" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.ui" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/robocode.ui.editor" charset="windows-1252" />
+  </component>
+</project>
+
