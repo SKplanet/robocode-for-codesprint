@@ -8,6 +8,7 @@
 package net.sf.robocode.ui.battleview;
 
 
+import net.sf.robocode.battle.peer.FuelItem;
 import net.sf.robocode.battle.snapshot.RobotSnapshot;
 import net.sf.robocode.robotpaint.Graphics2DSerialized;
 import net.sf.robocode.robotpaint.IGraphicsProxy;
@@ -70,6 +71,7 @@ public class BattleView extends Canvas {
 	private final int groundTileHeight = 64;
 
 	private Image groundImage;
+	private Image fuelImage;
 
 	// Draw option related things
 	private boolean drawRobotName;
@@ -236,6 +238,20 @@ public class BattleView extends Canvas {
 		initialized = true;
 	}
 
+	private void createFuelImage() {
+		Image img = imageManager.getFuelImage();
+		fuelImage = new BufferedImage(FuelItem.FUEL_ITEM_DEFAULT_SIZE, FuelItem.FUEL_ITEM_DEFAULT_SIZE, BufferedImage.TYPE_INT_ARGB);
+
+		Graphics2D fuelG2d = (Graphics2D) fuelImage.getGraphics();
+		fuelG2d.setRenderingHints(renderingHints);
+		fuelG2d.setTransform(AffineTransform.getScaleInstance(
+				FuelItem.FUEL_ITEM_DEFAULT_SIZE / (double) img.getWidth(null),
+				FuelItem.FUEL_ITEM_DEFAULT_SIZE / (double) img.getHeight(null)));
+		Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 1f );
+		fuelG2d.setComposite(comp);
+		fuelG2d.drawImage(img, 0, 0, null);
+	}
+
 	private void createGroundImage() {
 		// Reinitialize ground tiles
 
@@ -338,10 +354,13 @@ public class BattleView extends Canvas {
 	}
 
 	private void drawFuelItems(Graphics2D g, ITurnSnapshot snapShot) {
-		g.setColor(Color.YELLOW);
+		if (fuelImage == null) {
+			createFuelImage();
+		}
+
 		for(IFuelItemSnapshot fuelItemSnapshot : snapShot.getFuelItems()) {
-			Ellipse2D.Double circle = new Ellipse2D.Double(fuelItemSnapshot.getX(), fuelItemSnapshot.getY(), fuelItemSnapshot.getSize(), fuelItemSnapshot.getSize());
-			g.fill(circle);
+			int size = fuelItemSnapshot.getSize();
+			g.drawImage(fuelImage, (int)(fuelItemSnapshot.getX()-size/2.0), (int)(fuelItemSnapshot.getY()-size/2.0), size, size, null);
 		}
 	}
 

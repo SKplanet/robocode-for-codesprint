@@ -27,6 +27,7 @@ public class ImageManager implements IImageManager {
 	private final ISettingsManager properties;
 
 	private Image[] groundImages;
+	private Image fuelImage;
 
 	private RenderImage[][] explosionRenderImages;
 	private RenderImage debriseRenderImage;
@@ -50,6 +51,7 @@ public class ImageManager implements IImageManager {
 
 		// Reset image cache
 		groundImages = new Image[5];
+		fuelImage = null;
 		explosionRenderImages = null;
 		debriseRenderImage = null;
 		bodyImage = null;
@@ -64,6 +66,13 @@ public class ImageManager implements IImageManager {
 		getGunImage();
 		getRadarImage();
 		getExplosionRenderImage(0, 0);
+	}
+
+	public Image getFuelImage() {
+		if (fuelImage == null) {
+			fuelImage = getImage("/net/sf/robocode/ui/images/fuel.png");
+		}
+		return fuelImage;
 	}
 
 	public Image getGroundTileImage(int index) {
