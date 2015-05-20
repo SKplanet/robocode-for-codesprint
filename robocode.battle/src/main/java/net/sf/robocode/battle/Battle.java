@@ -9,10 +9,7 @@ package net.sf.robocode.battle;
 
 
 import net.sf.robocode.battle.events.BattleEventDispatcher;
-import net.sf.robocode.battle.peer.BulletPeer;
-import net.sf.robocode.battle.peer.ContestantPeer;
-import net.sf.robocode.battle.peer.RobotPeer;
-import net.sf.robocode.battle.peer.TeamPeer;
+import net.sf.robocode.battle.peer.*;
 import net.sf.robocode.battle.snapshot.TurnSnapshot;
 import net.sf.robocode.host.ICpuManager;
 import net.sf.robocode.host.IHostManager;
@@ -70,6 +67,7 @@ public final class Battle extends BaseBattle {
 	private List<RobotPeer> robots = new ArrayList<RobotPeer>();
 	private List<ContestantPeer> contestants = new ArrayList<ContestantPeer>();
 	private final List<BulletPeer> bullets = new CopyOnWriteArrayList<BulletPeer>();
+	private List<FuelItem> fuelItems = new ArrayList<FuelItem>();
 
 	// Robot counters
 	private int activeParticipants;
@@ -383,7 +381,7 @@ public final class Battle extends BaseBattle {
 
 		Logger.logMessage(""); // puts in a new-line in the log message
 
-		final ITurnSnapshot snapshot = new TurnSnapshot(this, robots, bullets, false);
+		final ITurnSnapshot snapshot = new TurnSnapshot(this, robots, bullets, fuelItems, false);
 
 		eventDispatcher.onRoundStarted(new RoundStartedEvent(snapshot, getRoundNum()));
 	}
@@ -416,6 +414,8 @@ public final class Battle extends BaseBattle {
 		updateBullets();
 
 		updateRobots();
+
+		updateFuelItems();
 
 		handleDeadRobots();
 
@@ -496,7 +496,7 @@ public final class Battle extends BaseBattle {
 
 	@Override
 	protected void finalizeTurn() {
-		eventDispatcher.onTurnEnded(new TurnEndedEvent(new TurnSnapshot(this, robots, bullets, true)));
+		eventDispatcher.onTurnEnded(new TurnEndedEvent(new TurnSnapshot(this, robots, bullets, fuelItems, true)));
 
 		super.finalizeTurn();
 	}
@@ -592,6 +592,26 @@ public final class Battle extends BaseBattle {
 		for (RobotPeer robotPeer : getRobotsAtRandom()) {
 			robotPeer.performScan(getRobotsAtRandom());
 		}
+	}
+
+	private void updateFuelItems() {
+		if (getTotalTurns() % 100 == 0) {
+			createFuelItem();
+		}
+
+		for (FuelItem fuelItem : fuelItems) {
+			fuelItem.update(robots);
+			if (fuelItem.isConsumed()) {
+				fuelItems.remove(fuelItem);
+			}
+		}
+		if (getTotalTurns() % 500 == 0) {
+			fuelItems.removeAll(fuelItems);
+		}
+	}
+
+	private void createFuelItem() {
+		fuelItems.add(new FuelItem(100, battleRules.getBattlefieldWidth()/2.0, battleRules.getBattlefieldHeight()/2.0));
 	}
 
 	private void handleDeadRobots() {

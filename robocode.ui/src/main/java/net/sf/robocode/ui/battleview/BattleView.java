@@ -25,6 +25,7 @@ import robocode.control.events.BattleFinishedEvent;
 import robocode.control.events.BattleStartedEvent;
 import robocode.control.events.TurnEndedEvent;
 import robocode.control.snapshot.IBulletSnapshot;
+import robocode.control.snapshot.IFuelItemSnapshot;
 import robocode.control.snapshot.IRobotSnapshot;
 import robocode.control.snapshot.ITurnSnapshot;
 
@@ -311,6 +312,9 @@ public class BattleView extends Canvas {
 			// Draw scan arcs
 			drawScanArcs(g, snapShot);
 
+			// Draw fuel items
+			drawFuelItems(g, snapShot);
+
 			// Draw robots
 			drawRobots(g, snapShot);
 
@@ -331,6 +335,14 @@ public class BattleView extends Canvas {
 
 		// Restore the graphics state
 		graphicsState.restore(g);
+	}
+
+	private void drawFuelItems(Graphics2D g, ITurnSnapshot snapShot) {
+		g.setColor(Color.YELLOW);
+		for(IFuelItemSnapshot fuelItemSnapshot : snapShot.getFuelItems()) {
+			Ellipse2D.Double circle = new Ellipse2D.Double(fuelItemSnapshot.getX(), fuelItemSnapshot.getY(), fuelItemSnapshot.getSize(), fuelItemSnapshot.getSize());
+			g.fill(circle);
+		}
 	}
 
 	private void drawGround(Graphics2D g) {
