@@ -13,8 +13,8 @@ import net.sf.robocode.battle.peer.BulletPeer;
 import net.sf.robocode.battle.peer.FuelItem;
 import net.sf.robocode.battle.peer.RobotPeer;
 import net.sf.robocode.serialization.IXmlSerializable;
-import net.sf.robocode.serialization.XmlReader;
 import net.sf.robocode.serialization.SerializableOptions;
+import net.sf.robocode.serialization.XmlReader;
 import net.sf.robocode.serialization.XmlWriter;
 import robocode.control.snapshot.*;
 
@@ -237,6 +237,17 @@ public final class TurnSnapshot implements java.io.Serializable, IXmlSerializabl
 				}
 			}
 			writer.endElement();
+
+			writer.startElement(options.shortAttributes ? "fs" : "fuelitems"); {
+				for (IFuelItemSnapshot f : fuelItems) {
+					final FuelItemSnapshot fs = (FuelItemSnapshot) f;
+					if ( !fs.isConsumed() ) {
+						fs.writeXml(writer, options);
+					}
+				}
+			}
+			writer.endElement();
+
 		}
 		writer.endElement();
 	}
@@ -299,6 +310,20 @@ public final class TurnSnapshot implements java.io.Serializable, IXmlSerializabl
 
 					public void add(IXmlSerializable child) {
 						snapshot.bullets.add((BulletSnapshot) child);
+					}
+
+					public void close() {}
+				});
+
+				reader.expect("fuelitems", "fs", new XmlReader.ListElement() {
+					public IXmlSerializable read(XmlReader reader) {
+						snapshot.fuelItems = new ArrayList<IFuelItemSnapshot>();
+						// prototype
+						return new FuelItemSnapshot();
+					}
+
+					public void add(IXmlSerializable child) {
+						snapshot.fuelItems.add((FuelItemSnapshot) child);
 					}
 
 					public void close() {}
