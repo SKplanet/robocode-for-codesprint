@@ -66,7 +66,8 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 	public static final int
 			WIDTH = 36,
-			HEIGHT = 36;
+			HEIGHT = 36,
+			MAX_FUEL = 100;
 
 	private static final int
 			HALF_WIDTH_OFFSET = WIDTH / 2,
@@ -104,6 +105,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 	private double lastRadarHeading;
 
 	private double energy;
+	private double fuel;
 	private double velocity;
 	private double bodyHeading;
 	private double radarHeading;
@@ -369,6 +371,8 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 	public double getEnergy() {
 		return energy;
 	}
+
+	public double getFuel() { return fuel; }
 
 	public double getGunHeat() {
 		return gunHeat;
@@ -728,6 +732,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		velocity = 0;
 
 		energy = 100;
+		fuel = MAX_FUEL;
 		if (statics.isSentryRobot()) {
 			energy += 400;
 		}
@@ -1411,6 +1416,10 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 			distance = 0;
 		}
 
+		if (getFuel() <= 0){
+			distance = 0;
+		}
+
 		velocity = getNewVelocity(velocity, distance);
 
 		// If we are over-driving our distance and we are now at velocity=0
@@ -1436,6 +1445,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		if (velocity != 0) {
 			x += velocity * sin(bodyHeading);
 			y += velocity * cos(bodyHeading);
+			updateFuel(0.5);
 			updateBoundingBox();
 		}
 	}
@@ -1638,6 +1648,17 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 			localCommands.setDistanceRemaining(0);
 			localCommands.setBodyTurnRemaining(0);
 		}
+	}
+
+	private void updateFuel(double delta){
+		fuel -= delta;
+		if ( fuel < 1 ) {
+			fuel = 0;
+		}
+	}
+
+	public synchronized void resetFuel(){
+		fuel = MAX_FUEL;
 	}
 
 	public void setWinner(boolean newWinner) {

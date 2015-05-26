@@ -35,6 +35,7 @@ public final class BattleRules implements java.io.Serializable {
 	private final long inactivityTime;
 	private final boolean hideEnemyNames;
 	private final int sentryBorderSize;
+	private final int fuelItemInterval;
 
 	/**
 	 * Returns the battlefield width.
@@ -122,9 +123,20 @@ public final class BattleRules implements java.io.Serializable {
 	public int getSentryBorderSize() {
 		return sentryBorderSize;
 	}
+
+	/**
+	 * Returns the fuelItem interval for a {@link robocode.fuelItemInterval} that defines the how
+	 *
+	 * @return the fuelItem Interval
+	 *
+	 * @since 1.9.0.0
+	 */
+	public int getFuelItemInterval() {
+		return fuelItemInterval;
+	}
 	
 	private BattleRules(int battlefieldWidth, int battlefieldHeight, int numRounds, double gunCoolingRate,
-			long inactivityTime, boolean hideEnemyNames, int sentryBorderSize) {
+			long inactivityTime, boolean hideEnemyNames, int sentryBorderSize, int fuelItemInterval) {
 		this.battlefieldWidth = battlefieldWidth;
 		this.battlefieldHeight = battlefieldHeight;
 		this.numRounds = numRounds;
@@ -132,6 +144,7 @@ public final class BattleRules implements java.io.Serializable {
 		this.inactivityTime = inactivityTime;
 		this.hideEnemyNames = hideEnemyNames;
 		this.sentryBorderSize = sentryBorderSize;
+		this.fuelItemInterval = fuelItemInterval;
 	}
 
 	static IHiddenRulesHelper createHiddenHelper() {
@@ -140,9 +153,9 @@ public final class BattleRules implements java.io.Serializable {
 
 	private static class HiddenHelper implements IHiddenRulesHelper {
 
-		public BattleRules createRules(int battlefieldWidth, int battlefieldHeight, int numRounds, double gunCoolingRate, long inactivityTime, boolean hideEnemyNames, int sentryBorderSize) {
+		public BattleRules createRules(int battlefieldWidth, int battlefieldHeight, int numRounds, double gunCoolingRate, long inactivityTime, boolean hideEnemyNames, int sentryBorderSize, int fuelItemInterval) {
 			return new BattleRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime,
-					hideEnemyNames, sentryBorderSize);
+					hideEnemyNames, sentryBorderSize, fuelItemInterval);
 		}
 	}
 }

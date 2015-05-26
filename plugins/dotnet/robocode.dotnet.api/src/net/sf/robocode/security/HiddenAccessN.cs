@@ -115,9 +115,9 @@ namespace net.sf.robocode.security
         }
 
         public static BattleRules createRules(int battlefieldWidth, int battlefieldHeight, int numRounds, double gunCoolingRate, long inactivityTime,
-            bool hideEnemyNames, int borderSentryRobotAttackRange)
+            bool hideEnemyNames, int borderSentryRobotAttackRange, int fuelItemInterval)
         {
-            return rulesHelper.createRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, borderSentryRobotAttackRange);
+            return rulesHelper.createRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, borderSentryRobotAttackRange, fuelItemInterval);
         }
 
         public static string GetRobotName()

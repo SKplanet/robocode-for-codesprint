@@ -10,17 +10,14 @@ package net.sf.robocode.settings;
 
 import net.sf.robocode.io.FileUtil;
 import net.sf.robocode.io.Logger;
-import static net.sf.robocode.io.Logger.logError;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
+
+import static net.sf.robocode.io.Logger.logError;
 
 
 /**
@@ -131,6 +128,7 @@ public class SettingsManager implements ISettingsManager {
 	private double battleDefaultGunCoolingRate = 0.1;
 	private long battleDefaultInactivityTime = 450;
 	private int battleDefaultSentryBorderSize = 100;
+	private int battleDefaultFuelItemInterval = 100;
 	private boolean battleDefaultHideEnemyNames = false;
 	private int battleDefaultNumberOfRounds = 10;
 
@@ -681,6 +679,15 @@ public class SettingsManager implements ISettingsManager {
 	public void setBattleDefaultSentryBorderSize(int sentryBorderSize) {
 		this.battleDefaultSentryBorderSize = sentryBorderSize;
 		props.setProperty(BATTLE_DEFAULT_SENTRY_BORDER_SIZE, "" + this.battleDefaultSentryBorderSize);
+	}
+
+	public int getBattleDefaultFuelItemInterval() {
+		return battleDefaultFuelItemInterval;
+	}
+
+	public void setBattleDefaultFuelItemInterval(int fuelItemInterval) {
+		this.battleDefaultFuelItemInterval = fuelItemInterval;
+		props.setProperty(BATTLE_DEFAULT_FUELITEM_INTERVAL, "" + this.battleDefaultFuelItemInterval);
 	}
 
 	public boolean getBattleDefaultHideEnemyNames() {

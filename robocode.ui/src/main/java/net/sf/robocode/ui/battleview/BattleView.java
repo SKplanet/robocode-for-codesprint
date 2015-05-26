@@ -339,8 +339,12 @@ public class BattleView extends Canvas {
 
 	private void drawFuelItems(Graphics2D g, ITurnSnapshot snapShot) {
 		g.setColor(Color.YELLOW);
+		double x,y;
+		int battleFieldHeight = battleField.getHeight();
 		for(IFuelItemSnapshot fuelItemSnapshot : snapShot.getFuelItems()) {
-			Ellipse2D.Double circle = new Ellipse2D.Double(fuelItemSnapshot.getX(), fuelItemSnapshot.getY(), fuelItemSnapshot.getSize(), fuelItemSnapshot.getSize());
+			x = fuelItemSnapshot.getX();
+			y = battleFieldHeight - fuelItemSnapshot.getY();
+			Ellipse2D.Double circle = new Ellipse2D.Double(x - fuelItemSnapshot.getSize()/2, y - fuelItemSnapshot.getSize()/2, fuelItemSnapshot.getSize(), fuelItemSnapshot.getSize());
 			g.fill(circle);
 		}
 	}
@@ -481,11 +485,12 @@ public class BattleView extends Canvas {
 				g.setColor(Color.white);
 				int ll = (int) robotSnapshot.getEnergy();
 				int rl = (int) ((robotSnapshot.getEnergy() - ll + .001) * 10.0);
+				int fuel = (int) robotSnapshot.getFuel();
 
 				if (rl == 10) {
 					rl = 9;
 				}
-				String energyString = ll + "." + rl;
+				String energyString = ll + "." + rl + " [" + fuel + "]";
 
 				if (robotSnapshot.getEnergy() == 0 && robotSnapshot.getState().isAlive()) {
 					energyString = "Disabled";

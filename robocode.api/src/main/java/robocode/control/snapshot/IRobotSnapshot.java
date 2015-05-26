@@ -98,6 +98,13 @@ public interface IRobotSnapshot {
 	double getEnergy();
 
 	/**
+	 * Returns the fuel level of the robot.
+	 *
+	 * @return the fuel level of the robot.
+	 */
+	double getFuel();
+
+	/**
 	 * Returns the velocity of the robot.
 	 *
 	 * @return the velocity of the robot.

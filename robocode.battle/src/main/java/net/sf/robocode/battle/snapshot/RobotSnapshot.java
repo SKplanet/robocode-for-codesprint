@@ -63,6 +63,9 @@ public final class RobotSnapshot implements Serializable, IXmlSerializable, IRob
 	/** The energy level of the robot */
 	private double energy;
 
+	/** The fuel level of the robot */
+	private double fuel;
+
 	/** The velocity of the robot */
 	private double velocity;
 
@@ -152,6 +155,7 @@ public final class RobotSnapshot implements Serializable, IXmlSerializable, IRob
 		state = robot.getState();
 
 		energy = robot.getEnergy();
+		fuel = robot.getFuel();
 		velocity = robot.getVelocity();
 		gunHeat = robot.getGunHeat(); 
 
@@ -257,6 +261,13 @@ public final class RobotSnapshot implements Serializable, IXmlSerializable, IRob
 	 */
 	public double getEnergy() {
 		return energy;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public double getFuel() {
+		return fuel;
 	}
 
 	/**

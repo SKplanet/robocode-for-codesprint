@@ -67,7 +67,7 @@ public final class Battle extends BaseBattle {
 	private List<RobotPeer> robots = new ArrayList<RobotPeer>();
 	private List<ContestantPeer> contestants = new ArrayList<ContestantPeer>();
 	private final List<BulletPeer> bullets = new CopyOnWriteArrayList<BulletPeer>();
-	private List<FuelItem> fuelItems = new ArrayList<FuelItem>();
+	private List<FuelItem> fuelItems = new CopyOnWriteArrayList<FuelItem>();
 
 	// Robot counters
 	private int activeParticipants;
@@ -90,7 +90,7 @@ public final class Battle extends BaseBattle {
 		isPaused = paused;
 		battleRules = HiddenAccess.createRules(battleProps.getBattlefieldWidth(), battleProps.getBattlefieldHeight(),
 				battleProps.getNumRounds(), battleProps.getGunCoolingRate(), battleProps.getInactivityTime(),
-				battleProps.getHideEnemyNames(), battleProps.getSentryBorderSize());
+				battleProps.getHideEnemyNames(), battleProps.getSentryBorderSize(), battleProps.getFuelItemInterval());
 		robotsCount = battlingRobotsList.length;
 		computeInitialPositions(battleProps.getInitialPositions());
 		createPeers(battlingRobotsList);
@@ -595,7 +595,7 @@ public final class Battle extends BaseBattle {
 	}
 
 	private void updateFuelItems() {
-		if (getTotalTurns() % 100 == 0) {
+		if (getTotalTurns() % battleRules.getFuelItemInterval() == 0) {
 			createFuelItem();
 		}
 
@@ -605,13 +605,17 @@ public final class Battle extends BaseBattle {
 				fuelItems.remove(fuelItem);
 			}
 		}
-		if (getTotalTurns() % 500 == 0) {
-			fuelItems.removeAll(fuelItems);
-		}
+//		if (getTotalTurns() % 500 == 0) {
+//			fuelItems.removeAll(fuelItems);
+//		}
 	}
 
 	private void createFuelItem() {
-		fuelItems.add(new FuelItem(100, battleRules.getBattlefieldWidth()/2.0, battleRules.getBattlefieldHeight()/2.0));
+		fuelItems.add(new FuelItem(battleRules.getBattlefieldWidth()/2.0, battleRules.getBattlefieldHeight()/2.0));
+
+		//test
+		//fuelItems.add(new FuelItem(15, 15, 15));
+
 	}
 
 	private void handleDeadRobots() {

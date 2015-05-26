@@ -523,11 +523,12 @@ namespace Robocode.Control
             long inactivityTime = obj.Invoke<long>("getInactivityTime", "()J", new object[] { });
             bool hideEnemyNames = obj.Invoke<bool>("getHideEnemyNames", "()Z", new object[] { });
             int sentryBorderSize = obj.Invoke<int>("getSentryBorderSize", "()I", new object[] { });
+            int fuelItemInterval = obj.Invoke<int>("getFuelItemInterval", "()I", new object[] { });
 
             MethodInfo method = typeof(BattleRules).GetMethod("createHiddenHelper", BindingFlags.Static | BindingFlags.NonPublic);
             IHiddenRulesHelper rulesHelper = (IHiddenRulesHelper)method.Invoke(null, null);
 
-            return rulesHelper.createRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, sentryBorderSize);
+            return rulesHelper.createRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, sentryBorderSize, fuelItemInterval);
         }
 
         private static BattleResults MapBattleResults(java.lang.Object obj)

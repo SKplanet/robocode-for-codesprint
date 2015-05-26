@@ -50,6 +50,7 @@ public class NewBattleRulesTab extends JPanel {
 	private final JLabel gunCoolingRateLabel = new JLabel("Gun Cooling Rate:");
 	private final JLabel inactivityTimeLabel = new JLabel("Inactivity Time:");
 	private final JLabel sentryBorderSizeLabel = new JLabel("Sentry Border Size");
+	private final JLabel fuelItemIntervalLabel = new JLabel("Fuel Item Interval");
 	private final JLabel hideEnemyNamesLabel = new JLabel("Hide Enemy Names:");
 
 	private final JButton restoreDefaultsButton = new JButton("Restore Defaults");
@@ -58,6 +59,7 @@ public class NewBattleRulesTab extends JPanel {
 	private JTextField gunCoolingRateTextField;
 	private JTextField inactivityTimeTextField;
 	private JTextField sentryBorderSizeTextField;
+	private JTextField fuelItemIntervalTextField;
 	private final JCheckBox hideEnemyNamesCheckBox = new JCheckBox();
 
 	private JSlider battlefieldWidthSlider;
@@ -188,6 +190,7 @@ public class NewBattleRulesTab extends JPanel {
 		left.addComponent(gunCoolingRateLabel);
 		left.addComponent(inactivityTimeLabel);
 		left.addComponent(sentryBorderSizeLabel);
+		left.addComponent(fuelItemIntervalLabel);
 		left.addComponent(hideEnemyNamesLabel);
 		leftToRight.addGroup(left);
 		
@@ -196,6 +199,7 @@ public class NewBattleRulesTab extends JPanel {
 		right.addComponent(getGunCoolingRateTextField());
 		right.addComponent(getInactivityTimeTextField());
 		right.addComponent(getSentryBorderSizeTextField());
+		right.addComponent(getFuelItemIntervalTextField());
 		right.addComponent(hideEnemyNamesCheckBox);
 		leftToRight.addGroup(right);
 		
@@ -221,10 +225,15 @@ public class NewBattleRulesTab extends JPanel {
 		row3.addComponent(sentryBorderSizeTextField);
 		topToBottom.addGroup(row3);
 
-		GroupLayout.ParallelGroup row4 = layout.createParallelGroup(Alignment.CENTER);
-		row4.addComponent(hideEnemyNamesLabel);
-		row4.addComponent(hideEnemyNamesCheckBox);
+		GroupLayout.ParallelGroup row4 = layout.createParallelGroup(Alignment.BASELINE);
+		row4.addComponent(fuelItemIntervalLabel);
+		row4.addComponent(fuelItemIntervalTextField);
 		topToBottom.addGroup(row4);
+
+		GroupLayout.ParallelGroup row5 = layout.createParallelGroup(Alignment.CENTER);
+		row5.addComponent(hideEnemyNamesLabel);
+		row5.addComponent(hideEnemyNamesCheckBox);
+		topToBottom.addGroup(row5);
 
 		layout.setHorizontalGroup(leftToRight);
 		layout.setVerticalGroup(topToBottom);
@@ -341,6 +350,33 @@ public class NewBattleRulesTab extends JPanel {
 		return sentryBorderSizeTextField;
 	}
 
+	private JTextField getFuelItemIntervalTextField() {
+		if (fuelItemIntervalTextField == null) {
+			fuelItemIntervalTextField = new JTextField(5);
+			fuelItemIntervalTextField.setText("" + battleProperties.getFuelItemInterval());
+			fuelItemIntervalTextField.setInputVerifier(
+					new InputVerifier() {
+						@Override
+						public boolean verify(JComponent input) {
+							boolean isValid = false;
+
+							String text = ((JTextField) input).getText();
+							if (text != null && text.matches("\\d+")) {
+								int interval = Integer.parseInt(text);
+								isValid = (interval >= 50 && interval < 150);
+							}
+							if (!isValid) {
+								WindowUtil.messageError(
+										"'FuelItem Interval' must be an integer ????.\n" + "Default value is 100.");
+								fuelItemIntervalTextField.setText("" + battleProperties.getFuelItemInterval());
+							}
+							return isValid;
+						}
+					});
+		}
+		return fuelItemIntervalTextField;
+	}
+
 	private JSlider createBattlefieldSizeSlider() {
 		JSlider slider = new JSlider();
 		slider.setMinimum(MIN_BATTLEFIELD_SIZE);
@@ -417,6 +453,16 @@ public class NewBattleRulesTab extends JPanel {
 			if (sentryBorderSize != null) {
 				settingsManager.setBattleDefaultSentryBorderSize(sentryBorderSize);
 				battleProperties.setSentryBorderSize(sentryBorderSize);
+			}
+			Integer fuelItemInterval;
+			try {
+				fuelItemInterval = Integer.parseInt(getFuelItemIntervalTextField().getText());
+			} catch (NumberFormatException e) {
+				fuelItemInterval = null;
+			}
+			if (fuelItemInterval != null) {
+				settingsManager.setBattleDefaultFuelItemInterval(fuelItemInterval);
+				battleProperties.setFuelItemInterval(fuelItemInterval);
 			}
 			boolean hideEnemyNames = hideEnemyNamesCheckBox.isSelected();
 			settingsManager.setBattleDefaultHideEnemyNames(hideEnemyNames);

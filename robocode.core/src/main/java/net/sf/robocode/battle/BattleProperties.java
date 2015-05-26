@@ -37,7 +37,8 @@ public class BattleProperties implements Serializable {
 			BATTLE_HIDE_ENEMY_NAMES = "robocode.battle.hideEnemyNames",
 			BATTLE_SELECTEDROBOTS = "robocode.battle.selectedRobots",
 			BATTLE_INITIAL_POSITIONS = "robocode.battle.initialPositions",
-			BATTLE_SENTRY_BORDER_SIZE = "robocode.battle.sentryBorderSize";
+			BATTLE_SENTRY_BORDER_SIZE = "robocode.battle.sentryBorderSize",
+			BATTLE_FUELITEM_INTERVAL = "robocode.battle.fuelItemInterval";
 
 	private int battlefieldWidth = 800;
 	private int battlefieldHeight = 600;
@@ -48,6 +49,7 @@ public class BattleProperties implements Serializable {
 	private int sentryBorderSize = 100;
 	private String selectedRobots;
 	private String initialPositions;
+	private int fuelItemInterval = 100;
 
 	private final Properties props = new Properties();
 
@@ -314,6 +316,28 @@ public class BattleProperties implements Serializable {
 		props.setProperty(BATTLE_SENTRY_BORDER_SIZE, "" + sentryBorderSize);
 	}
 
+	/**
+	 * Returns the fuelitem interval for a {@link robocode.fuelitem}.
+	 *
+	 * @return the fuelitem interval
+	 */
+	public int getFuelItemInterval() {
+		return fuelItemInterval;
+	}
+
+	/**
+	 * Returns the fuelitem interval for a {@link robocode.fuelitem}.
+	 *
+	 * @param interval is the fuelitem interval
+	 */
+	public void setFuelItemInterval(int interval) {
+		fuelItemInterval = interval;
+		props.setProperty(BATTLE_FUELITEM_INTERVAL, "" + fuelItemInterval);
+	}
+
+
+
+
 	public void store(FileOutputStream out, String desc) throws IOException {
 		props.store(out, desc);
 	}
@@ -329,5 +353,6 @@ public class BattleProperties implements Serializable {
 		selectedRobots = props.getProperty(BATTLE_SELECTEDROBOTS, "");
 		initialPositions = props.getProperty(BATTLE_INITIAL_POSITIONS, "");
 		sentryBorderSize = Integer.parseInt(props.getProperty(BATTLE_SENTRY_BORDER_SIZE, "100"));
+		fuelItemInterval = Integer.parseInt(props.getProperty(BATTLE_FUELITEM_INTERVAL, "100"));
 	}
 }

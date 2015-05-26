@@ -28,6 +28,7 @@ namespace Robocode
         private readonly long inactivityTime;
         private readonly bool hideEnemyNames;
         private readonly int sentryBorderSize;
+        private readonly int fuelItemInterval;
 
         ///<summary>
         ///  Returns the battlefield width.
@@ -117,6 +118,7 @@ namespace Robocode
             this.inactivityTime = inactivityTime;
             this.hideEnemyNames = hideEnemyNames;
             this.sentryBorderSize = sentryBorderSize;
+            this.fuelItemInterval = fuelItemInterval;
         }
 
         private static IHiddenRulesHelper createHiddenHelper()
@@ -127,9 +129,9 @@ namespace Robocode
         private class HiddenHelper : IHiddenRulesHelper
         {
             public BattleRules createRules(int battlefieldWidth, int battlefieldHeight, int numRounds, double gunCoolingRate, long inactivityTime,
-                bool hideEnemyNames, int borderSentryRobotAttackRange)
+                bool hideEnemyNames, int borderSentryRobotAttackRange, int fuelItemInterval)
             {
-                return new BattleRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, borderSentryRobotAttackRange);
+                return new BattleRules(battlefieldWidth, battlefieldHeight, numRounds, gunCoolingRate, inactivityTime, hideEnemyNames, borderSentryRobotAttackRange, fuelItemInterval);
             }
         }
     }
