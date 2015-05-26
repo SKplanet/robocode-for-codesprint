@@ -19,6 +19,8 @@ import java.awt.*;
 public interface IImageManager {
 	void initialize();
 
+	Image getFuelImage();
+
 	Image getGroundTileImage(int index);
 
 	RenderImage getExplosionRenderImage(int which, int frame);

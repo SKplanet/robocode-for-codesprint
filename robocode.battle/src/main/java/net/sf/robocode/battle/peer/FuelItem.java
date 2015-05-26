@@ -8,7 +8,7 @@ import java.util.List;
  * Fuels
  */
 public class FuelItem {
-	public static int FUEL_ITEM_DEFAULT_SIZE = 10;
+	public static int FUEL_ITEM_DEFAULT_SIZE = 40;
 	private int amount;
 	private double x;
 	private double y;
