@@ -79,6 +79,10 @@ public final class Battle extends BaseBattle {
 	// Initial robot setups (if any)
 	private RobotSetup[] initialRobotSetups;
 
+	// Initial padding value for fuel item positioning
+	private int battleWidthPadding;
+	private int battleHeightPadding;
+
 	public Battle(ISettingsManager properties, IBattleManager battleManager, IHostManager hostManager, ICpuManager cpuManager, BattleEventDispatcher eventDispatcher) { // NO_UCD (unused code)
 		super(
 				properties, battleManager, eventDispatcher);
@@ -311,6 +315,9 @@ public final class Battle extends BaseBattle {
 		if (nanoWait == 0) {
 			nanoWait = 1;
 		}
+
+		battleWidthPadding = Math.min(100, battleRules.getBattlefieldWidth()/3 );
+		battleHeightPadding = Math.min(100, battleRules.getBattlefieldHeight()/3 );
 	}
 
 	@Override
@@ -378,6 +385,8 @@ public final class Battle extends BaseBattle {
 		for (RobotPeer robotPeer : getRobotsAtRandom()) {
 			robotPeer.startRound(waitMillis, waitNanos);
 		}
+
+		fuelItems.removeAll(fuelItems);
 
 		Logger.logMessage(""); // puts in a new-line in the log message
 
@@ -595,27 +604,23 @@ public final class Battle extends BaseBattle {
 	}
 
 	private void updateFuelItems() {
-		if (getTotalTurns() % battleRules.getFuelItemInterval() == 0) {
+		if (currentTime % battleRules.getFuelItemInterval() == 0) {
 			createFuelItem();
 		}
 
 		for (FuelItem fuelItem : fuelItems) {
-			fuelItem.update(robots);
+			fuelItem.update(getRobotsAtRandom());
 			if (fuelItem.isConsumed()) {
 				fuelItems.remove(fuelItem);
 			}
 		}
-//		if (getTotalTurns() % 500 == 0) {
-//			fuelItems.removeAll(fuelItems);
-//		}
 	}
 
 	private void createFuelItem() {
-		fuelItems.add(new FuelItem(battleRules.getBattlefieldWidth()/2.0, battleRules.getBattlefieldHeight()/2.0));
+		Random r = RandomFactory.getRandom();
 
-		//test
-		//fuelItems.add(new FuelItem(15, 15, 15));
-
+		fuelItems.add(new FuelItem(Math.max(battleWidthPadding, r.nextInt() % battleRules.getBattlefieldWidth() - battleWidthPadding),
+				Math.max(battleHeightPadding, r.nextInt() % battleRules.getBattlefieldHeight() - battleHeightPadding)));
 	}
 
 	private void handleDeadRobots() {
