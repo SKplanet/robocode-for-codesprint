@@ -590,7 +590,7 @@ public final class Battle extends BaseBattle {
 
 		// Scan after moved all
 		for (RobotPeer robotPeer : getRobotsAtRandom()) {
-			robotPeer.performScan(getRobotsAtRandom());
+			robotPeer.performScan(getRobotsAtRandom(), fuelItems);
 		}
 	}
 

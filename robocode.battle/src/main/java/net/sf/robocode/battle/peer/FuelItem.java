@@ -70,4 +70,8 @@ public class FuelItem {
 	public int getSize() {
 		return size;
 	}
+
+	public BoundingRectangle getBoundingBox() {
+		return boundingBox;
+	}
 }

@@ -46,7 +46,7 @@ import java.awt.*;
  * @author Stefan Westen (contributor)
  * @author Pavel Savara (contributor)
  */
-public class Robot extends _Robot implements IInteractiveRobot, IPaintRobot, IBasicEvents3, IInteractiveEvents, IPaintEvents {
+public class Robot extends _Robot implements IInteractiveRobot, IPaintRobot, IBasicEvents4, IInteractiveEvents, IPaintEvents {
 
 	private static final int
 			WIDTH = 36,
@@ -733,6 +733,11 @@ public class Robot extends _Robot implements IInteractiveRobot, IPaintRobot, IBa
 	 * {@inheritDoc}
 	 */
 	public void onScannedRobot(ScannedRobotEvent event) {}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void onScannedFuelItem(ScannedFuelItemEvent event) {}
 
 	/**
 	 * {@inheritDoc}

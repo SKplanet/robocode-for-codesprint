@@ -938,7 +938,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		}
 	}
 
-	public void performScan(List<RobotPeer> robots) {
+	public void performScan(List<RobotPeer> robots, List<FuelItem> fuelItems) {
 		if (isDead()) {
 			return;
 		}
@@ -946,7 +946,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		turnedRadarWithGun = false;
 		// scan
 		if (scan) {
-			scan(lastRadarHeading, robots);
+			scan(lastRadarHeading, robots, fuelItems);
 			turnedRadarWithGun = (lastGunHeading == lastRadarHeading) && (gunHeading == radarHeading);
 			scan = false;
 		}
@@ -1520,7 +1520,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		}
 	}
 
-	private void scan(double lastRadarHeading, List<RobotPeer> robots) {
+	private void scan(double lastRadarHeading, List<RobotPeer> robots, List<FuelItem> fuelItems) {
 		if (statics.isDroid()) {
 			return;
 		}
@@ -1556,6 +1556,21 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 				final ScannedRobotEvent event = new ScannedRobotEvent(getNameForEvent(otherRobot), otherRobot.energy,
 						normalRelativeAngle(angle - getBodyHeading()), dist, otherRobot.getBodyHeading(),
 						otherRobot.getVelocity(), otherRobot.isSentryRobot());
+
+				addEvent(event);
+			}
+		}
+
+		for (FuelItem fuelItem : fuelItems) {
+			if (fuelItem != null
+					&& intersects(scanArc, fuelItem.getBoundingBox())) {
+				double dx = fuelItem.getX() - x;
+				double dy = fuelItem.getY() - y;
+				double angle = atan2(dx, dy);
+				double dist = Math.hypot(dx, dy);
+
+				final ScannedFuelItemEvent event = new ScannedFuelItemEvent(fuelItem.getAmount(),
+						normalRelativeAngle(angle - getBodyHeading()), dist);
 
 				addEvent(event);
 			}

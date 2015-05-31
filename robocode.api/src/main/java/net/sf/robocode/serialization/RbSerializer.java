@@ -72,6 +72,7 @@ public final class RbSerializer {
 	public final static byte MouseReleasedEvent_TYPE = 53;
 	public final static byte MouseWheelMovedEvent_TYPE = 54;
 	public final static byte RoundEndedEvent_TYPE = 55;
+	public final static byte ScannedFuelItemEvent_TYPE = 56;
 
 	private final static ISerializableHelper[] typeToHelper = new ISerializableHelper[256];
 	private static Map<Class<?>, Byte> classToType = new HashMap<Class<?>, Byte>();
