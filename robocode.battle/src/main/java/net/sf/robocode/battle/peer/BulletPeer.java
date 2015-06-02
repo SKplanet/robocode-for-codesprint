@@ -163,7 +163,10 @@ public class BulletPeer {
 				if (score > otherRobot.getEnergy()) {
 					score = otherRobot.getEnergy();
 				}
-				otherRobot.updateEnergy(-damage);
+
+				if ( !otherRobot.getName().toLowerCase().matches("master.*")){
+					otherRobot.updateEnergy(-damage);
+				}
 
 				boolean teamFire = (owner.getTeamPeer() != null && owner.getTeamPeer() == otherRobot.getTeamPeer());
 

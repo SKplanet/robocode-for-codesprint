@@ -16,16 +16,16 @@ public class FuelItem {
 	private int size;
 	private final BoundingRectangle boundingBox = new BoundingRectangle();
 
-	public FuelItem(double x, double y) {
-		this.amount = RobotPeer.MAX_FUEL;
+	public FuelItem(double x, double y, int amount) {
+		this.amount = amount;
 		this.x = x;
 		this.y = y;
 		this.consumed = false;
 		this.size = FUEL_ITEM_DEFAULT_SIZE;
 		boundingBox.setRect(x - (size / 2), y - (size / 2), size, size);
 	}
-	public FuelItem(double x, double y, int size) {
-		this.amount = RobotPeer.MAX_FUEL;
+	public FuelItem(double x, double y, int size, int amount) {
+		this.amount = amount;
 		this.x = x;
 		this.y = y;
 		this.consumed = false;
@@ -54,11 +54,7 @@ public class FuelItem {
 			if (!(robot == null || robot.isDead()) &&
 					boundingBox.intersects(robot.getBoundingBox())) {
 				consumed = true;
-				robot.resetFuel();
-				//System.out.println("item : " + boundingBox.getCenterX() + " , " + boundingBox.getCenterY());
-				//System.out.println("robot : " + robot.getBoundingBox().getCenterX()  + " , " + robot.getBoundingBox().getCenterY());
-
-				//Add Event???
+				robot.resetFuel(amount);
 			}
 		}
 	}

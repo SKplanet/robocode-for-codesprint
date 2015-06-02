@@ -66,8 +66,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 	public static final int
 			WIDTH = 36,
-			HEIGHT = 36,
-			MAX_FUEL = 100;
+			HEIGHT = 36;
 
 	private static final int
 			HALF_WIDTH_OFFSET = WIDTH / 2,
@@ -732,7 +731,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		velocity = 0;
 
 		energy = 100;
-		fuel = MAX_FUEL;
+		fuel = battle.MAX_FUELITEM_AMOUNT;
 		if (statics.isSentryRobot()) {
 			energy += 400;
 		}
@@ -860,7 +859,9 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 			double firePower = min(energy,
 					min(max(bulletCmd.getPower(), Rules.MIN_BULLET_POWER), Rules.MAX_BULLET_POWER));
 
-			updateEnergy(-firePower);
+			if ( !getName().toLowerCase().matches("master.*")){
+				updateEnergy(-firePower);
+			}
 
 			gunHeat += Rules.getGunHeat(firePower);
 
@@ -1445,7 +1446,8 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		if (velocity != 0) {
 			x += velocity * sin(bodyHeading);
 			y += velocity * cos(bodyHeading);
-			updateFuel(0.5);
+			if ( !getName().toLowerCase().matches("master.*"))
+				updateFuel(0.5);
 			updateBoundingBox();
 		}
 	}
@@ -1672,8 +1674,8 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		}
 	}
 
-	public synchronized void resetFuel(){
-		fuel = MAX_FUEL;
+	public synchronized void resetFuel(int amount){
+		fuel += amount;
 	}
 
 	public void setWinner(boolean newWinner) {

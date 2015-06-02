@@ -49,6 +49,9 @@ import java.util.regex.Pattern;
 public final class Battle extends BaseBattle {
 
 	private static final int DEBUG_TURN_WAIT_MILLIS = 10 * 60 * 1000; // 10 seconds
+	private static final int MAX_FILED_FUELITEM_COUNT = 2;
+	private static final int MIN_FUELITEM_AMOUNT = 40;
+	public static final int MAX_FUELITEM_AMOUNT = 100;
 
 	private final IHostManager hostManager;
 	private final long cpuConstant;
@@ -62,6 +65,8 @@ public final class Battle extends BaseBattle {
 	private long millisWait;
 	private int nanoWait;
 
+	private int fuelItemAmount;
+
 	// Objects in the battle
 	private int robotsCount;
 	private List<RobotPeer> robots = new ArrayList<RobotPeer>();
@@ -72,6 +77,8 @@ public final class Battle extends BaseBattle {
 	// Robot counters
 	private int activeParticipants;
 	private int activeSentries;
+
+
 
 	// Death events
 	private final List<RobotPeer> deathRobots = new CopyOnWriteArrayList<RobotPeer>();
@@ -386,6 +393,7 @@ public final class Battle extends BaseBattle {
 			robotPeer.startRound(waitMillis, waitNanos);
 		}
 
+		//initialize fuelItem
 		fuelItems.removeAll(fuelItems);
 
 		Logger.logMessage(""); // puts in a new-line in the log message
@@ -604,7 +612,8 @@ public final class Battle extends BaseBattle {
 	}
 
 	private void updateFuelItems() {
-		if (currentTime % battleRules.getFuelItemInterval() == 0) {
+		if (currentTime % battleRules.getFuelItemInterval() == 0
+				&& fuelItems.size() < MAX_FILED_FUELITEM_COUNT) {
 			createFuelItem();
 		}
 
@@ -619,8 +628,12 @@ public final class Battle extends BaseBattle {
 	private void createFuelItem() {
 		Random r = RandomFactory.getRandom();
 
+		if ( fuelItemAmount > MIN_FUELITEM_AMOUNT ){
+			fuelItemAmount = fuelItemAmount - 20;
+		}
+
 		fuelItems.add(new FuelItem(Math.max(battleWidthPadding, r.nextInt() % battleRules.getBattlefieldWidth() - battleWidthPadding),
-				Math.max(battleHeightPadding, r.nextInt() % battleRules.getBattlefieldHeight() - battleHeightPadding)));
+				Math.max(battleHeightPadding, r.nextInt() % battleRules.getBattlefieldHeight() - battleHeightPadding), fuelItemAmount));
 	}
 
 	private void handleDeadRobots() {
