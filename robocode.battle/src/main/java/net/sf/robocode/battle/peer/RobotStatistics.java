@@ -136,7 +136,7 @@ public class RobotStatistics implements ContestantStatistics {
 	public double getCurrentScore() {
 		return robotPeer.isSentryRobot()
 				? 0
-				: (bulletDamageScore + rammingDamageScore);
+				: (bulletDamageScore + rammingDamageScore + survivalScore);
 	}
 
 	public double getCurrentSurvivalScore() {
