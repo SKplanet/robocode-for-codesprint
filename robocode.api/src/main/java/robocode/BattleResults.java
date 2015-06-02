@@ -76,11 +76,11 @@ public class BattleResults implements java.io.Serializable, Comparable<BattleRes
 		this.rank = rank;
 		this.score = score;
 		this.survival = survival;
-		this.lastSurvivorBonus = lastSurvivorBonus;
+		this.lastSurvivorBonus = 0;
 		this.bulletDamage = bulletDamage;
-		this.bulletDamageBonus = bulletDamageBonus;
+		this.bulletDamageBonus = 0;
 		this.ramDamage = ramDamage;
-		this.ramDamageBonus = ramDamageBonus;
+		this.ramDamageBonus = 0;
 		this.firsts = firsts;
 		this.seconds = seconds;
 		this.thirds = thirds;

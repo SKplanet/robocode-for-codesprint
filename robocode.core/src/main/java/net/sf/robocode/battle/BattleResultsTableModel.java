@@ -58,7 +58,7 @@ public class BattleResultsTableModel extends javax.swing.table.AbstractTableMode
 	}
 
 	public int getColumnCount() {
-		return 12;
+		return 6;
 	}
 
 	@Override
@@ -74,31 +74,13 @@ public class BattleResultsTableModel extends javax.swing.table.AbstractTableMode
 			return "    Total Score    ";
 
 		case 3:
-			return "Survival";
+			return "Turn Surv";
 
 		case 4:
-			return "Surv Bonus";
-
-		case 5:
 			return "Bullet Dmg";
 
-		case 6:
-			return "Bullet Bonus";
-
-		case 7:
-			return "Ram Dmg * 2";
-
-		case 8:
-			return "Ram Bonus";
-
-		case 9:
-			return " 1sts ";
-
-		case 10:
-			return " 2nds ";
-
-		case 11:
-			return " 3rds ";
+		case 5:
+			return "Ram Dmg";
 
 		default:
 			return "";
@@ -150,28 +132,10 @@ public class BattleResultsTableModel extends javax.swing.table.AbstractTableMode
 			return "" + (int) (statistics.getSurvival() + 0.5);
 
 		case 4:
-			return "" + (int) (statistics.getLastSurvivorBonus() + 0.5);
-
-		case 5:
 			return "" + (int) (statistics.getBulletDamage() + 0.5);
 
-		case 6:
-			return "" + (int) (statistics.getBulletDamageBonus() + 0.5);
-
-		case 7:
+		case 5:
 			return "" + (int) (statistics.getRamDamage() + 0.5);
-
-		case 8:
-			return "" + (int) (statistics.getRamDamageBonus() + 0.5);
-
-		case 9:
-			return "" + statistics.getFirsts();
-
-		case 10:
-			return "" + statistics.getSeconds();
-
-		case 11:
-			return "" + statistics.getThirds();
 
 		default:
 			return "";

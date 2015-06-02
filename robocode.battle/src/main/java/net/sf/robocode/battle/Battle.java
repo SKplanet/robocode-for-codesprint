@@ -428,6 +428,8 @@ public final class Battle extends BaseBattle {
 
 		loadCommands();
 
+		updateSurvivalScore();
+
 		updateBullets();
 
 		updateRobots();
@@ -583,6 +585,14 @@ public final class Battle extends BaseBattle {
 		// this will load commands, including bullets from last turn 
 		for (RobotPeer robotPeer : robots) {
 			robotPeer.performLoadCommands();
+		}
+	}
+
+	private void updateSurvivalScore() {
+		for (RobotPeer robotPeer : robots) {
+			if ( robotPeer.isAlive() ){
+				robotPeer.updateSurvivalScore(totalTurns);
+			}
 		}
 	}
 

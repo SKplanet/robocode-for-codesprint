@@ -883,6 +883,10 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		}
 	}
 
+	public final void updateSurvivalScore(int totalTurns){
+		statistics.setSurvivalScore(totalTurns);
+	}
+
 	public final void performMove(List<RobotPeer> robots, double zapEnergy) {
 
 		// Reset robot state to active if it is not dead

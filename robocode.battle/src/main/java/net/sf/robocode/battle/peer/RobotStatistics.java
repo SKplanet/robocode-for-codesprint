@@ -79,11 +79,11 @@ public class RobotStatistics implements ContestantStatistics {
 
 	public void generateTotals() {
 		totalSurvivalScore += survivalScore;
-		totalLastSurvivorBonus += lastSurvivorBonus;
+		totalLastSurvivorBonus += 0;
 		totalBulletDamageScore += bulletDamageScore;
-		totalBulletKillBonus += bulletKillBonus;
+		totalBulletKillBonus += 0;
 		totalRammingDamageScore += rammingDamageScore;
-		totalRammingKillBonus += rammingKillBonus;
+		totalRammingKillBonus += 0;
 
 		totalScore = robotPeer.isSentryRobot()
 				? 0
@@ -136,8 +136,7 @@ public class RobotStatistics implements ContestantStatistics {
 	public double getCurrentScore() {
 		return robotPeer.isSentryRobot()
 				? 0
-				: (bulletDamageScore + rammingDamageScore + survivalScore + rammingKillBonus + bulletKillBonus
-				+ lastSurvivorBonus);
+				: (bulletDamageScore + rammingDamageScore);
 	}
 
 	public double getCurrentSurvivalScore() {
@@ -166,8 +165,12 @@ public class RobotStatistics implements ContestantStatistics {
 
 	public void scoreSurvival() {
 		if (isActive && !robotPeer.isSentryRobot()) {
-			survivalScore += 50;
+			//survivalScore += 50;
 		}
+	}
+
+	public void setSurvivalScore(int totalTurns){
+		survivalScore = totalTurns;
 	}
 
 	public void scoreLastSurvivor() {
