@@ -51,7 +51,7 @@ public final class Battle extends BaseBattle {
 	private static final int DEBUG_TURN_WAIT_MILLIS = 10 * 60 * 1000; // 10 seconds
 	private static final int MAX_FILED_FUELITEM_COUNT = 2;
 	private static final int MIN_FUELITEM_AMOUNT = 40;
-	public static final int MAX_FUELITEM_AMOUNT = 100;
+	public static final int MAX_FUELITEM_AMOUNT = 200;
 
 	private final IHostManager hostManager;
 	private final long cpuConstant;
@@ -395,6 +395,7 @@ public final class Battle extends BaseBattle {
 
 		//initialize fuelItem
 		fuelItems.removeAll(fuelItems);
+		fuelItemAmount = MAX_FUELITEM_AMOUNT;
 
 		Logger.logMessage(""); // puts in a new-line in the log message
 

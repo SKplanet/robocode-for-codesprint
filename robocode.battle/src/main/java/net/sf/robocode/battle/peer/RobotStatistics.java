@@ -170,7 +170,7 @@ public class RobotStatistics implements ContestantStatistics {
 	}
 
 	public void setSurvivalScore(int totalTurns){
-		survivalScore = totalTurns;
+		survivalScore = totalTurns*0.1;
 	}
 
 	public void scoreLastSurvivor() {

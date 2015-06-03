@@ -74,6 +74,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 	private static final int MAX_SKIPPED_TURNS = 30;
 	private static final int MAX_SKIPPED_TURNS_WITH_IO = 240;
+	private static final int MAX_ROBOT_ENERGY = 200;
 
 	private Battle battle;
 	private RobotStatistics statistics;
@@ -732,6 +733,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 		energy = 100;
 		fuel = battle.MAX_FUELITEM_AMOUNT;
+
 		if (statics.isSentryRobot()) {
 			energy += 400;
 		}
@@ -1668,6 +1670,9 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 			localCommands.setDistanceRemaining(0);
 			localCommands.setBodyTurnRemaining(0);
+		}
+		if (energy > 200) {
+			energy = 200;
 		}
 	}
 

@@ -51,8 +51,8 @@ public class FuelItem {
 
 	private void checkItemOccupied(List<RobotPeer> robotsAtRandom){
 		for (RobotPeer robot : robotsAtRandom) {
-			if (!(robot == null || robot.isDead()) &&
-					boundingBox.intersects(robot.getBoundingBox())) {
+			if (!(robot == null || robot.isDead() || robot.getName().toLowerCase().matches("master.*"))
+					&&	boundingBox.intersects(robot.getBoundingBox())) {
 				consumed = true;
 				robot.resetFuel(amount);
 			}
