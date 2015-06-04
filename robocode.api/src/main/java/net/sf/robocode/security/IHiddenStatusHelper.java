@@ -16,7 +16,7 @@ import robocode.RobotStatus;
  * @author Flemming N. Larsen (contributor)
  */
 public interface IHiddenStatusHelper {
-	RobotStatus createStatus(double energy, double x, double y, double bodyHeading, double gunHeading, double radarHeading,
+	RobotStatus createStatus(double energy, double fuel, double x, double y, double bodyHeading, double gunHeading, double radarHeading,
 			double velocity, double bodyTurnRemaining, double radarTurnRemaining, double gunTurnRemaining,
 			double distanceRemaining, double gunHeat, int others, int numSentries, int roundNum, int numRounds, long time);
 }

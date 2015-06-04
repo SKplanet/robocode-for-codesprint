@@ -28,6 +28,7 @@ public final class RobotStatus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private final double energy;
+	private final double fuel;
 	private final double x;
 	private final double y;
 	private final double bodyHeading;
@@ -53,6 +54,13 @@ public final class RobotStatus implements Serializable {
 	public double getEnergy() {
 		return energy;
 	}
+
+	/**
+	 * Returns the robot's current fuel.
+	 *
+	 * @return the robot's current fuel
+	 */
+	public double getFuel() { return fuel; }
 
 	/**
 	 * Returns the X position of the robot. (0,0) is at the bottom left of the
@@ -336,10 +344,11 @@ public final class RobotStatus implements Serializable {
 		return time;
 	}
 
-	private RobotStatus(double energy, double x, double y, double bodyHeading, double gunHeading, double radarHeading,
+	private RobotStatus(double energy, double fuel, double x, double y, double bodyHeading, double gunHeading, double radarHeading,
 			double velocity, double bodyTurnRemaining, double radarTurnRemaining, double gunTurnRemaining,
 			double distanceRemaining, double gunHeat, int others, int numSentries, int roundNum, int numRounds, long time) {
 		this.energy = energy;
+		this.fuel = fuel;
 		this.x = x;
 		this.y = y;
 		this.bodyHeading = bodyHeading;
@@ -372,6 +381,7 @@ public final class RobotStatus implements Serializable {
 			RobotStatus obj = (RobotStatus) object;
 
 			serializer.serialize(buffer, obj.energy);
+			serializer.serialize(buffer, obj.fuel);
 			serializer.serialize(buffer, obj.x);
 			serializer.serialize(buffer, obj.y);
 			serializer.serialize(buffer, obj.bodyHeading);
@@ -392,6 +402,7 @@ public final class RobotStatus implements Serializable {
 
 		public Object deserialize(RbSerializer serializer, ByteBuffer buffer) {
 			double energy = buffer.getDouble();
+			double fuel = buffer.getDouble();
 			double x = buffer.getDouble();
 			double y = buffer.getDouble();
 			double bodyHeading = buffer.getDouble();
@@ -409,15 +420,15 @@ public final class RobotStatus implements Serializable {
 			int numRounds = buffer.getInt();
 			long time = buffer.getLong();
 
-			return new RobotStatus(energy, x, y, bodyHeading, gunHeading, radarHeading, velocity, bodyTurnRemaining,
+			return new RobotStatus(energy, fuel, x, y, bodyHeading, gunHeading, radarHeading, velocity, bodyTurnRemaining,
 					radarTurnRemaining, gunTurnRemaining, distanceRemaining, gunHeat, others, numSentries, roundNum, numRounds,
 					time);
 		}
 
-		public RobotStatus createStatus(double energy, double x, double y, double bodyHeading, double gunHeading, double radarHeading, double velocity,
+		public RobotStatus createStatus(double energy, double fuel, double x, double y, double bodyHeading, double gunHeading, double radarHeading, double velocity,
 				double bodyTurnRemaining, double radarTurnRemaining, double gunTurnRemaining, double distanceRemaining, double gunHeat, int others,
 				int numSentries, int roundNum, int numRounds, long time) {
-			return new RobotStatus(energy, x, y, bodyHeading, gunHeading, radarHeading, velocity, bodyTurnRemaining,
+			return new RobotStatus(energy, fuel, x, y, bodyHeading, gunHeading, radarHeading, velocity, bodyTurnRemaining,
 					radarTurnRemaining, gunTurnRemaining, distanceRemaining, gunHeat, others, numSentries, roundNum, numRounds,
 					time);
 		}

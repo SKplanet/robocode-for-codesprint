@@ -261,6 +261,11 @@ public class BasicRobotProxy extends HostingRobotProxy implements IBasicRobotPee
 		return getEnergyImpl();
 	}
 
+	public double getFuel() {
+		getCall();
+		return status.getFuel();
+	}
+
 	public double getGunHeat() {
 		getCall();
 		return getGunHeatImpl();
