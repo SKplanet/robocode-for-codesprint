@@ -128,7 +128,7 @@ public class SettingsManager implements ISettingsManager {
 	private double battleDefaultGunCoolingRate = 0.1;
 	private long battleDefaultInactivityTime = 450;
 	private int battleDefaultSentryBorderSize = 100;
-	private int battleDefaultFuelItemInterval = 100;
+	private int battleDefaultFuelItemInterval = 200;
 	private boolean battleDefaultHideEnemyNames = false;
 	private int battleDefaultNumberOfRounds = 10;
 

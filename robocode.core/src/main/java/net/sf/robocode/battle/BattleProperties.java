@@ -49,7 +49,7 @@ public class BattleProperties implements Serializable {
 	private int sentryBorderSize = 100;
 	private String selectedRobots;
 	private String initialPositions;
-	private int fuelItemInterval = 100;
+	private int fuelItemInterval = 200;
 
 	private final Properties props = new Properties();
 
@@ -353,6 +353,6 @@ public class BattleProperties implements Serializable {
 		selectedRobots = props.getProperty(BATTLE_SELECTEDROBOTS, "");
 		initialPositions = props.getProperty(BATTLE_INITIAL_POSITIONS, "");
 		sentryBorderSize = Integer.parseInt(props.getProperty(BATTLE_SENTRY_BORDER_SIZE, "100"));
-		fuelItemInterval = Integer.parseInt(props.getProperty(BATTLE_FUELITEM_INTERVAL, "100"));
+		fuelItemInterval = Integer.parseInt(props.getProperty(BATTLE_FUELITEM_INTERVAL, "200"));
 	}
 }

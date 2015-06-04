@@ -1451,6 +1451,14 @@ public class Robot extends _Robot implements IInteractiveRobot, IPaintRobot, IBa
 		return 0; // never called
 	}
 
+	public double getFuel() {
+		if (peer != null) {
+			return peer.getFuel();
+		}
+		uninitializedException();
+		return 0; // never called
+	}
+
 	/**
 	 * Returns a graphics context used for painting graphical items for the robot.
 	 * <p/>

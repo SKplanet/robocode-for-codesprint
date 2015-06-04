@@ -62,6 +62,13 @@ public interface IBasicRobotPeer {
 	double getEnergy();
 
 	/**
+	 * Returns the robot's current fuel.
+	 *
+	 * @return the robot's current fuel.
+	 */
+	double getFuel();
+
+	/**
 	 * Returns the X position of the robot. (0,0) is at the bottom left of the
 	 * battlefield.
 	 *
