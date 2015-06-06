@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * @author Pavel Savara (original)
  */
-public final class ExecCommands implements Serializable {
+public final class  ExecCommands implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public static final int defaultBodyColor = 0xFF29298C;
 	public static final int defaultGunColor = 0xFF29298C;

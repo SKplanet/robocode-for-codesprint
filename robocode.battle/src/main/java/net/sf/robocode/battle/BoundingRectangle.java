@@ -18,7 +18,7 @@ package net.sf.robocode.battle;
  * @author Mathew A. Nelson (original)
  */
 @SuppressWarnings("serial")
-public class BoundingRectangle extends java.awt.geom.Rectangle2D.Float {
+public class  BoundingRectangle extends java.awt.geom.Rectangle2D.Float {
 
 	public BoundingRectangle() {
 		super();

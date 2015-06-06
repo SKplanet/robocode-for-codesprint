@@ -804,7 +804,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		int others = battle.countActiveParticipants() - (isAlive() ? 1 : 0);
 		int numSentries = battle.countActiveSentries();
 
-		RobotStatus stat = HiddenAccess.createStatus(energy, x, y, bodyHeading, gunHeading, radarHeading, velocity,
+		RobotStatus stat = HiddenAccess.createStatus(energy, fuel, x, y, bodyHeading, gunHeading, radarHeading, velocity,
 				currentCommands.getBodyTurnRemaining(), currentCommands.getRadarTurnRemaining(),
 				currentCommands.getGunTurnRemaining(), currentCommands.getDistanceRemaining(), gunHeat, others, numSentries,
 				battle.getRoundNum(), battle.getNumRounds(), battle.getTime());
@@ -1685,6 +1685,9 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 
 	public synchronized void resetFuel(int amount){
 		fuel += amount;
+		if ( fuel > 200 ){
+			fuel = 200;
+		}
 	}
 
 	public void setWinner(boolean newWinner) {
@@ -1772,7 +1775,7 @@ public final class RobotPeer implements IRobotPeerBattle, IRobotPeer {
 		int others = battle.countActiveParticipants() - (isDead() || isSentryRobot() ? 0 : 1);
 		int numSentries = battle.countActiveSentries();
 
-		RobotStatus stat = HiddenAccess.createStatus(energy, x, y, bodyHeading, gunHeading, radarHeading, velocity,
+		RobotStatus stat = HiddenAccess.createStatus(energy, fuel, x, y, bodyHeading, gunHeading, radarHeading, velocity,
 				currentCommands.getBodyTurnRemaining(), currentCommands.getRadarTurnRemaining(),
 				currentCommands.getGunTurnRemaining(), currentCommands.getDistanceRemaining(), gunHeat, others, numSentries,
 				battle.getRoundNum(), battle.getNumRounds(), battle.getTime());

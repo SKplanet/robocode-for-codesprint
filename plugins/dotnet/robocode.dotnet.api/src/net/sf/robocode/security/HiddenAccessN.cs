@@ -103,13 +103,13 @@ namespace net.sf.robocode.security
             bulletHelper.update(bullet, x, y, victimName, isActive);
         }
 
-        public static RobotStatus createStatus(double energy, double x, double y, double bodyHeading, double gunHeading,
+        public static RobotStatus createStatus(double energy, double fuel, double x, double y, double bodyHeading, double gunHeading,
                                                double radarHeading, double velocity, double bodyTurnRemaining,
                                                double radarTurnRemaining, double gunTurnRemaining,
                                                double distanceRemaining, double gunHeat, int others, int numSentries,
                                                int roundNum, int numRounds, long time)
         {
-            return statusHelper.createStatus(energy, x, y, bodyHeading, gunHeading, radarHeading, velocity,
+            return statusHelper.createStatus(energy, fuel, x, y, bodyHeading, gunHeading, radarHeading, velocity,
                                              bodyTurnRemaining, radarTurnRemaining, gunTurnRemaining, distanceRemaining,
                                              gunHeat, others, numSentries, roundNum, numRounds, time);
         }

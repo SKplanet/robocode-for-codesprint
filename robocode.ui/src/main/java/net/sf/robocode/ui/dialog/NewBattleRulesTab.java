@@ -363,11 +363,11 @@ public class NewBattleRulesTab extends JPanel {
 							String text = ((JTextField) input).getText();
 							if (text != null && text.matches("\\d+")) {
 								int interval = Integer.parseInt(text);
-								isValid = (interval >= 50 && interval < 150);
+								isValid = (interval >= 50 && interval < 250);
 							}
 							if (!isValid) {
 								WindowUtil.messageError(
-										"'FuelItem Interval' must be an integer ????.\n" + "Default value is 100.");
+										"'FuelItem Interval' must be an integer > 250 && integer < 50.\n" + "Default value is 200.");
 								fuelItemIntervalTextField.setText("" + battleProperties.getFuelItemInterval());
 							}
 							return isValid;

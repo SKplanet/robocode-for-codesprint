@@ -1451,6 +1451,11 @@ public class Robot extends _Robot implements IInteractiveRobot, IPaintRobot, IBa
 		return 0; // never called
 	}
 
+	/**
+	 * Returns the robot's current fuel.
+	 *
+	 * @return the robot's current fuel.
+	 */
 	public double getFuel() {
 		if (peer != null) {
 			return peer.getFuel();

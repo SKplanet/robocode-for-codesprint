@@ -14,7 +14,7 @@ namespace net.sf.robocode.security
     /// <exclude/>
     public interface IHiddenStatusHelper
     {
-        RobotStatus createStatus(double energy, double x, double y, double bodyHeading, double gunHeading,
+        RobotStatus createStatus(double energy, double fuel, double x, double y, double bodyHeading, double gunHeading,
                                  double radarHeading,
                                  double velocity, double bodyTurnRemaining, double radarTurnRemaining,
                                  double gunTurnRemaining,
