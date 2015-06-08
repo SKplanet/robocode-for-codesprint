@@ -70,14 +70,15 @@ public class ImageManager implements IImageManager {
 
 	public Image getFuelImage() {
 		if (fuelImage == null) {
-			fuelImage = getImage("/net/sf/robocode/ui/images/fuel.png");
+			fuelImage = getImage("/net/sf/robocode/ui/images/fuelItem.png");
 		}
 		return fuelImage;
 	}
 
 	public Image getGroundTileImage(int index) {
+		index = 0;
 		if (groundImages[index] == null) {
-			groundImages[index] = getImage("/net/sf/robocode/ui/images/ground/blue_metal/blue_metal_" + index + ".png");
+			groundImages[index] = getImage("/net/sf/robocode/ui/images/ground/custom_metal/metal_tile.png");
 		}
 		return groundImages[index];
 	}

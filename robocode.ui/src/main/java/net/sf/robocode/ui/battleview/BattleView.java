@@ -67,8 +67,8 @@ public class BattleView extends Canvas {
 	// Ground
 	private int[][] groundTiles;
 
-	private final int groundTileWidth = 64;
-	private final int groundTileHeight = 64;
+	private final int groundTileWidth = 800;
+	private final int groundTileHeight = 600;
 
 	private Image groundImage;
 	private Image fuelImage;
