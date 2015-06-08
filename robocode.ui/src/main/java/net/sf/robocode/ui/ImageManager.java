@@ -28,6 +28,7 @@ public class ImageManager implements IImageManager {
 
 	private Image[] groundImages;
 	private Image fuelImage;
+	private Image groundLogoImage;
 
 	private RenderImage[][] explosionRenderImages;
 	private RenderImage debriseRenderImage;
@@ -52,6 +53,7 @@ public class ImageManager implements IImageManager {
 		// Reset image cache
 		groundImages = new Image[5];
 		fuelImage = null;
+		groundLogoImage = null;
 		explosionRenderImages = null;
 		debriseRenderImage = null;
 		bodyImage = null;
@@ -204,6 +206,13 @@ public class ImageManager implements IImageManager {
 			robotRadarImageCache.put(color, img);
 		}
 		return img;
+	}
+
+	public Image getGroundLogoImage() {
+		if (groundLogoImage == null) {
+			groundLogoImage = getImage("/net/sf/robocode/ui/images/ground/SKplanet_trademark_black.png");
+		}
+		return groundLogoImage;
 	}
 
 	/**

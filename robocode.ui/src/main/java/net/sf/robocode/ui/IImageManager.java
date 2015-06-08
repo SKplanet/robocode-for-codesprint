@@ -32,4 +32,6 @@ public interface IImageManager {
 	RenderImage getColoredGunRenderImage(Integer color);
 
 	RenderImage getColoredRadarRenderImage(Integer color);
+
+	Image getGroundLogoImage();
 }

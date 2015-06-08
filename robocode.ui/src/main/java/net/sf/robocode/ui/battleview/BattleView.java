@@ -292,6 +292,12 @@ public class BattleView extends Canvas {
 				}
 			}
 		}
+		Image img = imageManager.getGroundLogoImage();
+		Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.2f );
+		groundGfx.setComposite(comp);
+		groundGfx.drawImage(img,
+				(battleField.getWidth() - img.getWidth(null))/2 - 100,
+				(battleField.getHeight() - img.getHeight(null))/2, null);
 	}
 
 	private void drawBattle(Graphics2D g, ITurnSnapshot snapShot) {
