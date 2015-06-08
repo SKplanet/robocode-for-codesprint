@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /**
  * A ScannedFuelItemEvent is sent to {@link Robot#onScannedFuelItem(ScannedFuelItemEvent)
- * onScannedFuel()} when you scan a robot.
+ * onScannedFuelItem()} when you scan a robot.
  * You can use the information contained in this event to determine what to do.
  *
  */
@@ -36,9 +36,9 @@ public class ScannedFuelItemEvent extends Event {
 	/**
 	 * Called by the game to create a new ScannedFuelItemEvent.
 	 *
-	 * @param amountOfFuel  the amount of the scanned fuelItem
-	 * @param bearing  the bearing of the scanned fuelItem, in radians
-	 * @param distance the distance from your robot to the scanned fuelItem
+	 * @param amountOfFuel  the amount of the scanned fuel item
+	 * @param bearing  the bearing of the scanned fuel item, in radians
+	 * @param distance the distance from your robot to the scanned fuel item
 	 *
 	 */
 	public ScannedFuelItemEvent(double amountOfFuel, double bearing, double distance) {
@@ -49,38 +49,38 @@ public class ScannedFuelItemEvent extends Event {
 	}
 
 	/**
-	 * Returns the bearing to the fuelItem you scanned, relative to your robot's
+	 * Returns the bearing to the fuel item you scanned, relative to your robot's
 	 * heading, in degrees (-180 <= getBearing() < 180)
 	 *
-	 * @return the bearing to the fuelItem you scanned, in degrees
+	 * @return the bearing to the fuel item you scanned, in degrees
 	 */
 	public double getBearing() {
 		return bearing * 180.0 / Math.PI;
 	}
 
 	/**
-	 * Returns the bearing to the fuelItem you scanned, relative to your robot's
+	 * Returns the bearing to the fuel item you scanned, relative to your robot's
 	 * heading, in radians (-PI <= getBearingRadians() < PI)
 	 *
-	 * @return the bearing to the fuelItem you scanned, in radians
+	 * @return the bearing to the fuel item you scanned, in radians
 	 */
 	public double getBearingRadians() {
 		return bearing;
 	}
 
 	/**
-	 * Returns the distance to the fuelItem (your center to its center).
+	 * Returns the distance to the fuel item (your center to its center).
 	 *
-	 * @return the distance to the fuelItem.
+	 * @return the distance to the fuel item.
 	 */
 	public double getDistance() {
 		return distance;
 	}
 
 	/**
-	 * Returns the amount of the fuelItem.
+	 * Returns the amount of fuel of the fuel item.
 	 *
-	 * @return the amount of the fuelItem
+	 * @return the amount of fuel of the fuel item
 	 */
 	public double getAmountOfFuel() {
 		return amount;
