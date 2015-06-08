@@ -38,6 +38,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 					<include>**/*.properties</include>
 					<include>**/*.team</include>
 					<include>**/*.html</include>
+					<include>**/*.jar</include>
 				</includes>
 			</resource>
 		</resources>

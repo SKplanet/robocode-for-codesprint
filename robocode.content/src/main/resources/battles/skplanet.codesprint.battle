@@ -1,9 +1,11 @@
 #Battle Properties
+#Fri Jun 05 15:19:39 KST 2015
 robocode.battleField.width=800
 robocode.battleField.height=600
-robocode.battle.numRounds=3
-robocode.battle.gunCoolingRate=0.1
 robocode.battle.rules.inactivityTime=450
-robocode.battle.selectedRobots=sample.Corners,sample.MyFirstRobot
+robocode.battle.numRounds=5
+robocode.battle.fuelItemInterval=200
+robocode.battle.selectedRobots=master.beginner 1,sample.Crazy
 robocode.battle.initialPositions=(100,100,0),(700,500,0)
+robocode.battle.gunCoolingRate=0.1
 robocode.battle.hideEnemyNames=true
