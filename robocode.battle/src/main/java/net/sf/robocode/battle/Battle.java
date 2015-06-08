@@ -643,8 +643,8 @@ public final class Battle extends BaseBattle {
 			fuelItemAmount = fuelItemAmount - 20;
 		}
 
-		fuelItems.add(new FuelItem(Math.max(battleWidthPadding, r.nextInt() % battleRules.getBattlefieldWidth() - battleWidthPadding),
-				Math.max(battleHeightPadding, r.nextInt() % battleRules.getBattlefieldHeight() - battleHeightPadding), fuelItemAmount));
+		fuelItems.add(new FuelItem(battleWidthPadding + r.nextInt(battleRules.getBattlefieldWidth() - 2*battleWidthPadding + 1),
+				battleHeightPadding +  r.nextInt(battleRules.getBattlefieldHeight() - 2*battleHeightPadding + 1), fuelItemAmount));
 	}
 
 	private void handleDeadRobots() {
