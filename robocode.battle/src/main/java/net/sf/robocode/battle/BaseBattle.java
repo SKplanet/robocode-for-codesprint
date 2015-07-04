@@ -11,16 +11,18 @@ package net.sf.robocode.battle;
 import net.sf.robocode.battle.events.BattleEventDispatcher;
 import net.sf.robocode.io.Logger;
 import net.sf.robocode.io.URLJarCollector;
-import static net.sf.robocode.io.Logger.logError;
-import static net.sf.robocode.io.Logger.logMessage;
 import net.sf.robocode.settings.ISettingsManager;
 import robocode.BattleRules;
 import robocode.control.events.BattlePausedEvent;
 import robocode.control.events.BattleResumedEvent;
 
 import java.util.Queue;
+import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static net.sf.robocode.io.Logger.logError;
+import static net.sf.robocode.io.Logger.logMessage;
 
 
 /**
@@ -246,6 +248,7 @@ public abstract class BaseBattle implements IBattle, Runnable {
 		roundOver = false;
 		endTimer = 0;
 		currentTime = 0;
+		resetFuelRandom();
 	}
 
 	private void runRound() {
@@ -470,6 +473,36 @@ public abstract class BaseBattle implements IBattle, Runnable {
 		} catch (InterruptedException e) {
 			// Immediately reasserts the exception by interrupting the caller thread itself
 			Thread.currentThread().interrupt();
+		}
+	}
+
+	private Random fuelRandom;
+	private long nextFuelRandomSeed;
+
+	protected Random getFuelRandom() {
+		if (fuelRandom == null){
+			final String seed = System.getProperty("RANDOMSEED", "none");
+			if (!seed.equals("none")) {
+				setFuelRandom(Long.valueOf(seed));
+			} else {
+				setFuelRandom(null);
+			}
+		}
+		return fuelRandom;
+	}
+	private void setFuelRandom(Long seed){
+		if (seed == null) {
+			fuelRandom = new Random();
+		} else {
+			fuelRandom = new Random(seed);
+		}
+		nextFuelRandomSeed = fuelRandom.nextLong();
+	}
+	protected void resetFuelRandom() {
+		if (fuelRandom == null) {
+			getFuelRandom();
+		} else {
+			setFuelRandom(nextFuelRandomSeed);
 		}
 	}
 }

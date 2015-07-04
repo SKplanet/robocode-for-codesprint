@@ -637,7 +637,7 @@ public final class Battle extends BaseBattle {
 	}
 
 	private void createFuelItem() {
-		Random r = RandomFactory.getRandom();
+		Random r = getFuelRandom();
 
 		if ( fuelItemAmount > MIN_FUELITEM_AMOUNT ){
 			fuelItemAmount = fuelItemAmount - 20;
