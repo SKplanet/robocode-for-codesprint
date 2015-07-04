@@ -8,11 +8,12 @@
 package robocode.control;
 
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Random;
+
 import static net.sf.robocode.io.Logger.logError;
 import static net.sf.robocode.io.Logger.logWarning;
-
-import java.lang.reflect.Field;
-import java.util.Random;
 
 
 /**
@@ -56,8 +57,20 @@ public class RandomFactory {
 				randomNumberGenerator = (Random) field.get(null);
 				field.setAccessible(savedFieldAccessible);
 			} catch (NoSuchFieldException e) {
-				logWarningNotSupported();
-				randomNumberGenerator = new Random();
+				try {
+					final Field field = Math.class.getDeclaredClasses()[0].getDeclaredField("randomNumberGenerator");
+					final boolean savedFieldAccessible = field.isAccessible();
+
+					field.setAccessible(true);
+					randomNumberGenerator = (Random) field.get(null);
+					field.setAccessible(savedFieldAccessible);
+				} catch (NoSuchFieldException e1) {
+					logWarningNotSupported();
+					randomNumberGenerator = new Random();
+				} catch (IllegalAccessException e1) {
+					logError(e);
+					randomNumberGenerator = new Random();
+				}
 			} catch (IllegalAccessException e) {
 				logError(e);
 				randomNumberGenerator = new Random();
@@ -84,7 +97,23 @@ public class RandomFactory {
 			field.set(null, randomNumberGenerator);
 			field.setAccessible(savedFieldAccessible);
 		} catch (NoSuchFieldException e) {
-			logWarningNotSupported();
+			try {
+				// replace Math class on java8
+				final Field field = Math.class.getDeclaredClasses()[0].getDeclaredField("randomNumberGenerator");
+				final boolean savedFieldAccessible = field.isAccessible();
+
+				field.setAccessible(true);
+				Field modifiersField = Field.class.getDeclaredField("modifiers");
+				modifiersField.setAccessible(true);
+				modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+
+				field.set(null, randomNumberGenerator);
+				field.setAccessible(savedFieldAccessible);
+			} catch (NoSuchFieldException e1) {
+				logWarningNotSupported();
+			} catch (IllegalAccessException e1) {
+				logError(e1);
+			}
 		} catch (IllegalAccessException e) {
 			logError(e);
 		}
