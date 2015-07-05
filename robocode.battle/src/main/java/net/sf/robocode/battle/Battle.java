@@ -592,7 +592,7 @@ public final class Battle extends BaseBattle {
 	private void updateSurvivalScore() {
 		for (RobotPeer robotPeer : robots) {
 			if ( robotPeer.isAlive() ){
-				robotPeer.updateSurvivalScore(totalTurns);
+				robotPeer.updateSurvivalScore(currentTime);
 			}
 		}
 	}
